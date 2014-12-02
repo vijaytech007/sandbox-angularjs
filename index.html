@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="gemStore">
+  <head>
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="application.css">    
+  </head>
+  <body class="list-group" ng-controller="StoreController as store">
+    <header>
+      <h1 class="text-center">Flatlander Crafted Gems</h1>
+      <h2 class="text-center">an Angular store</h2>
+    </header>
+    <div class="list-group-item" ng-repeat="product in store.products">
+      <h3>
+        {{product.name}}
+        <em class="pull-right">{{product.price | currency}}</em>
+      </h3>
+      <product-gallery class="gallery" ng-show="product.images.length"  ng-controller="GalleryController as gallery"></product-gallery>      
+      <product-tab></product-tab>
+    </div>
+    <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+  </body>
+</html>
+
+
